@@ -1,14 +1,22 @@
 class Mover extends Thing {
- int[][] map;
+  int[][] map;
+  int ldx, ldy;
 
-  Mover(int[][] view) {
+  Mover(int[][] view, int _x, int _y, color _c) {
+    super(_x, _y, _c);
     map = view;
+    ldx = 0;
+    ldy = 0;
   }
 
   void move(int dx, int dy) {
-    if (map[x + dx][y + dy] == 0) {
+    if (isClearAt(x + dx, y + dy)) {
       x += dx;
       y += dy;
+      ldx = dx;
+      ldy = dy;
     }
+    println("(" + x + ", " + y + ")");
   }
 }
+

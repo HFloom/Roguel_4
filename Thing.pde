@@ -3,6 +3,10 @@ class Thing {
   int y;
   color c;
 
-  Thing() {}
+  Thing(int _x, int _y, color _c) {
+    x = _x;
+    y = _y;
+    c = _c;
+  }
 }
 
